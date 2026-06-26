@@ -1,0 +1,115 @@
+.skills {
+  position: relative;
+  overflow: hidden;
+  padding: 86px 9%;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(74, 222, 128, 0.12), transparent 30%),
+    #020617;
+  text-align: center;
+}
+
+.skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  pointer-events: none;
+}
+
+.skills-title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 46px;
+  color: #ffffff;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.skills-title span {
+  display: inline-block;
+  padding-bottom: 12px;
+  border-bottom: 4px solid #22d3ee;
+}
+
+.skills-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  min-height: 118px;
+  padding: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.78);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  color: #f8fafc;
+  text-align: left;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--skill-color);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.skill-icon {
+  display: grid;
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  margin-right: 18px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--skill-color), transparent 48%);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--skill-color), transparent 86%);
+  color: var(--skill-color);
+  font-size: 32px;
+}
+
+.skill-content h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.skill-content span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  border-radius: 999px;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .skills {
+    padding: 70px 6%;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    min-height: 104px;
+    padding: 18px;
+  }
+}
